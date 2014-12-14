@@ -57,7 +57,9 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
-<pre class="r"><code>unzip(&quot;./activity.zip&quot;)
+<pre class="r"><code>require(ggplot2)
+require(dplyr)
+unzip(&quot;./activity.zip&quot;)
 data &lt;- read.csv(&quot;activity.csv&quot;)</code></pre>
 </div>
 <div id="what-is-mean-total-number-of-steps-taken-per-day" class="section level2">

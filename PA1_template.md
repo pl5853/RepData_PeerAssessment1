@@ -1,11 +1,11 @@
 # Reproducible Research: Peer Assessment 1
 
-
-
 ## Loading and preprocessing the data
 
 
 ```r
+require(ggplot2)
+require(dplyr)
 unzip("./activity.zip")
 data <- read.csv("activity.csv")
 ```
@@ -22,7 +22,7 @@ per_day <- data %>%
 ggplot(aes(x = steps), data = per_day) + geom_histogram(binwidth = 500)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 ```r
 mean(per_day$steps, na.rm=TRUE)
@@ -51,7 +51,7 @@ per_interval <- data %>%
 ggplot(aes(x = interval, y = avg_steps), data = per_interval) + geom_line()
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 ```r
 per_interval$interval[which.max(per_interval$avg_steps)]
@@ -85,7 +85,7 @@ per_day_transformed <- data_transformed %>%
 ggplot(aes(x = steps), data = per_day_transformed) + geom_histogram(binwidth = 500)
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
 
 ```r
 mean(per_day_transformed$steps)
@@ -119,4 +119,4 @@ ggplot(aes(x = interval, y = avg_steps), data = per_interval_weekday) +
     geom_line()
 ```
 
-![](./PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![](./PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
